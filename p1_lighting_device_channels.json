@@ -1,0 +1,56 @@
+{
+  "p1_lighting_device": {
+    "device_type": "현재 사용중인 조명기 (P1)",
+    "channels": {
+      "channel_1": {
+        "function": "Master Dimmer (전체 밝기)",
+        "range": "0-255",
+        "description": "전체 광량/밝기 조절",
+        "usage": "0=꺼짐, 255=최대 밝기"
+      },
+      "channel_2": {
+        "function": "Strobe (깜빡임 속도)",
+        "range": "0-255",
+        "description": "깜빡임/플리커 속도",
+        "usage": "값이 높을수록 빠른 깜빡임"
+      },
+      "channel_3": {
+        "function": "미사용 또는 Reserved",
+        "range": "무시",
+        "description": "사용하지 않는 채널",
+        "usage": "확인되지 않음"
+      },
+      "channel_4": {
+        "function": "Preset Colors (미리 지정된 색상)",
+        "range": "0-255",
+        "description": "DMX 값마다 다른 색깔 출력",
+        "usage": "각 값별로 미리 설정된 색상/효과 선택"
+      },
+      "channel_5": {
+        "function": "Red (빨간색)",
+        "range": "0-255",
+        "description": "빨간색 밝기 개별 조절",
+        "usage": "0=빨간색 꺼짐, 255=빨간색 최대"
+      },
+      "channel_6": {
+        "function": "Green (녹색)",
+        "range": "0-255",
+        "description": "녹색 밝기 개별 조절",
+        "usage": "0=녹색 꺼짐, 255=녹색 최대"
+      },
+      "channel_7": {
+        "function": "Blue (파란색)",
+        "range": "0-255",
+        "description": "파란색 밝기 개별 조절",
+        "usage": "0=파란색 꺼짐, 255=파란색 최대"
+      }
+    },
+    "usage_tips": {
+      "white_light": "흰색 조명: 채널 5,6,7(R,G,B)을 모두 최대로 설정 + 채널 1(밝기) 최대",
+      "specific_colors": "특정 색상: 원하는 R/G/B만 올리고 나머지는 0",
+      "preset_colors": "빠른 색상 전환: 채널 4로 DMX 값 변경하여 프리셋 색상 사용",
+      "strobe_effect": "깜빡임 효과: 채널 2로 깜빡임 속도 조절"
+    },
+    "dmx_address": "DMX 1번부터 시작 (Disco240에서 P1 선택시)"
+  }
+}

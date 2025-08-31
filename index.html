@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disco240 완전 가이드</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Disco240 완전 가이드</h1>
+            <div class="update-notice">
+                <span class="status status--success">실제 조명기 정보 추가됨</span>
+            </div>
+            <div class="search-container">
+                <input type="text" id="searchInput" class="form-control" placeholder="기능 검색..." />
+            </div>
+        </header>
+
+        <nav class="tab-nav">
+            <button class="tab-button active" data-tab="console">콘솔 조작법</button>
+            <button class="tab-button" data-tab="p1-device">P1 조명기</button>
+            <button class="tab-button" data-tab="led-spot">LED Spot 참고용</button>
+            <button class="tab-button" data-tab="tips">실무 팁</button>
+            <button class="tab-button" data-tab="troubleshoot">문제 해결</button>
+        </nav>
+
+        <main class="main-content">
+            <!-- 콘솔 조작법 탭 -->
+            <section id="console-tab" class="tab-content active">
+                <div class="section-grid">
+                    <div class="card highlight-edit">
+                        <div class="card__body">
+                            <h3>체이스 편집 (CHASE EDIT)</h3>
+                            <ol class="step-list">
+                                <li>BLACK 버튼으로 정지 모드 진입</li>
+                                <li>EDIT/RUN 버튼으로 편집 모드 전환</li>
+                                <li>P1-P12 버튼으로 체이스 번호 선택</li>
+                                <li>P1-P12 버튼으로 조명기 선택</li>
+                                <li>슬라이더로 각 채널 값 설정</li>
+                                <li>SPEED/CROSS 노브로 타이밍 설정</li>
+                                <li>+ 버튼으로 현재 씬을 체이스에 저장</li>
+                                <li>추가 씬이 필요하면 4-7단계 반복</li>
+                                <li>EDIT/RUN 버튼으로 편집 완료</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="card highlight-run">
+                        <div class="card__body">
+                            <h3>체이스 실행 (CHASE RUN)</h3>
+                            <ol class="step-list">
+                                <li>EDIT/RUN 버튼으로 실행 모드 확인</li>
+                                <li>P1-P12 버튼으로 실행할 체이스 선택</li>
+                                <li>SPEED 노브로 체이스 속도 조절</li>
+                                <li>CROSS 노브로 페이드 타이밍 조절</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>수동 제어 (MANUAL 모드)</h3>
+                            <ol class="step-list">
+                                <li>MANUAL 버튼 누르기</li>
+                                <li>P1-P12로 제어할 조명기 선택</li>
+                                <li>해당 조명기 슬라이더로 각 채널 조작</li>
+                                <li>RELEASE CHANNELS로 자동 제어 복귀</li>
+                            </ol>
+                        </div>
+                    </div>
+
+                    <div class="card highlight-info">
+                        <div class="card__body">
+                            <h3>P1 조명기 콘솔 매핑</h3>
+                            <div class="mapping-grid">
+                                <div class="mapping-item">CH1 → P1 밝기 (채널 1)</div>
+                                <div class="mapping-item">CH2 → P1 깜빡임 (채널 2)</div>
+                                <div class="mapping-item">CH3 → 미사용</div>
+                                <div class="mapping-item">CH4 → P1 프리셋 컬러 (채널 4)</div>
+                                <div class="mapping-item">CH5 → P1 빨강 (채널 5)</div>
+                                <div class="mapping-item">CH6 → P1 녹색 (채널 6)</div>
+                                <div class="mapping-item">CH7 → P1 파랑 (채널 7)</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card highlight-warning">
+                        <div class="card__body">
+                            <h3>RUN SCENE 모드 주의사항</h3>
+                            <p><strong>중요:</strong> RUN SCENE 모드에서는 +/- 버튼으로 씬 간 전환이 불가능합니다. 이는 콘솔의 기본 제한사항입니다.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- P1 조명기 탭 -->
+            <section id="p1-device-tab" class="tab-content">
+                <div class="section-grid">
+                    <div class="card highlight-info">
+                        <div class="card__body">
+                            <h3>🎯 실제 사용 중인 P1 조명기 정보</h3>
+                            <p><strong>장치 타입:</strong> 고정형 RGB 조명</p>
+                            <p><strong>DMX 주소:</strong> DMX 1번부터 시작 (7개 채널)</p>
+                            <p><strong>특징:</strong> RGB 개별 제어 + 프리셋 컬러 + 스트로브 기능</p>
+                        </div>
+                    </div>
+
+                    <div class="channels-grid">
+                        <div class="card channel-card ch1">
+                            <div class="card__body">
+                                <h4>💡 채널 1: Master Dimmer</h4>
+                                <div class="channel-info">
+                                    <p><strong>기능:</strong> 전체 밝기 조절</p>
+                                    <p><strong>범위:</strong> 0-255</p>
+                                    <p><strong>사용법:</strong> 0=꺼짐, 255=최대 밝기</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card channel-card ch2">
+                            <div class="card__body">
+                                <h4>⚡ 채널 2: Strobe</h4>
+                                <div class="channel-info">
+                                    <p><strong>기능:</strong> 깜빡임 속도</p>
+                                    <p><strong>범위:</strong> 0-255</p>
+                                    <p><strong>사용법:</strong> 높을수록 빠른 깜빡임</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card channel-card ch3">
+                            <div class="card__body">
+                                <h4>❌ 채널 3: Reserved</h4>
+                                <div class="channel-info">
+                                    <p><strong>기능:</strong> 미사용</p>
+                                    <p><strong>범위:</strong> 무시</p>
+                                    <p><strong>사용법:</strong> 사용하지 않음</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card channel-card ch4">
+                            <div class="card__body">
+                                <h4>🌈 채널 4: Preset Colors</h4>
+                                <div class="channel-info">
+                                    <p><strong>기능:</strong> 미리 지정된 색상</p>
+                                    <p><strong>범위:</strong> 0-255</p>
+                                    <p><strong>사용법:</strong> DMX 값마다 다른 색상</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card channel-card ch5">
+                            <div class="card__body">
+                                <h4>🔴 채널 5: Red</h4>
+                                <div class="channel-info">
+                                    <p><strong>기능:</strong> 빨간색 밝기</p>
+                                    <p><strong>범위:</strong> 0-255</p>
+                                    <p><strong>사용법:</strong> 0=꺼짐, 255=최대</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card channel-card ch6">
+                            <div class="card__body">
+                                <h4>🟢 채널 6: Green</h4>
+                                <div class="channel-info">
+                                    <p><strong>기능:</strong> 녹색 밝기</p>
+                                    <p><strong>범위:</strong> 0-255</p>
+                                    <p><strong>사용법:</strong> 0=꺼짐, 255=최대</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card channel-card ch7">
+                            <div class="card__body">
+                                <h4>🔵 채널 7: Blue</h4>
+                                <div class="channel-info">
+                                    <p><strong>기능:</strong> 파란색 밝기</p>
+                                    <p><strong>범위:</strong> 0-255</p>
+                                    <p><strong>사용법:</strong> 0=꺼짐, 255=최대</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card highlight-run">
+                        <div class="card__body">
+                            <h3>💡 실무 활용 팁</h3>
+                            <div class="tips-grid">
+                                <div class="tip-item">
+                                    <h5>흰색 조명 만들기</h5>
+                                    <p>채널 1,5,6,7 모두 255로 설정</p>
+                                    <div class="values">밝기:255, R:255, G:255, B:255</div>
+                                </div>
+                                <div class="tip-item">
+                                    <h5>빨간색 조명</h5>
+                                    <p>채널 5만 255, G/B는 0</p>
+                                    <div class="values">밝기:255, R:255, G:0, B:0</div>
+                                </div>
+                                <div class="tip-item">
+                                    <h5>프리셋 컬러 사용</h5>
+                                    <p>채널 4 값으로 빠른 색상 전환</p>
+                                    <div class="values">각 값마다 다른 색상 출력</div>
+                                </div>
+                                <div class="tip-item">
+                                    <h5>깜빡임 효과</h5>
+                                    <p>밝기/색상 설정 후 채널 2로 속도 조절</p>
+                                    <div class="values">높은 값 = 빠른 깜빡임</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- P1 전용 컨트롤 패널 -->
+                    <div class="card p1-control-panel">
+                        <div class="card__body">
+                            <h3>🎛️ P1 가상 컨트롤 패널</h3>
+                            <div class="virtual-sliders">
+                                <div class="slider-group">
+                                    <label>밝기 (Ch1)</label>
+                                    <input type="range" id="p1-dimmer" min="0" max="255" value="0" class="p1-slider">
+                                    <span class="value-display" id="p1-dimmer-value">0</span>
+                                </div>
+                                <div class="slider-group">
+                                    <label>깜빡임 (Ch2)</label>
+                                    <input type="range" id="p1-strobe" min="0" max="255" value="0" class="p1-slider">
+                                    <span class="value-display" id="p1-strobe-value">0</span>
+                                </div>
+                                <div class="slider-group">
+                                    <label>프리셋 컬러 (Ch4)</label>
+                                    <input type="range" id="p1-preset" min="0" max="255" value="0" class="p1-slider">
+                                    <span class="value-display" id="p1-preset-value">0</span>
+                                </div>
+                                <div class="slider-group red">
+                                    <label>빨강 (Ch5)</label>
+                                    <input type="range" id="p1-red" min="0" max="255" value="0" class="p1-slider">
+                                    <span class="value-display" id="p1-red-value">0</span>
+                                </div>
+                                <div class="slider-group green">
+                                    <label>녹색 (Ch6)</label>
+                                    <input type="range" id="p1-green" min="0" max="255" value="0" class="p1-slider">
+                                    <span class="value-display" id="p1-green-value">0</span>
+                                </div>
+                                <div class="slider-group blue">
+                                    <label>파랑 (Ch7)</label>
+                                    <input type="range" id="p1-blue" min="0" max="255" value="0" class="p1-slider">
+                                    <span class="value-display" id="p1-blue-value">0</span>
+                                </div>
+                            </div>
+                            <div class="color-preview" id="color-preview">
+                                <div class="preview-box"></div>
+                                <span>RGB 색상 미리보기</span>
+                            </div>
+                            <div class="preset-buttons">
+                                <button class="btn btn--sm" onclick="setP1Preset('white')">흰색</button>
+                                <button class="btn btn--sm" onclick="setP1Preset('red')">빨강</button>
+                                <button class="btn btn--sm" onclick="setP1Preset('green')">녹색</button>
+                                <button class="btn btn--sm" onclick="setP1Preset('blue')">파랑</button>
+                                <button class="btn btn--sm" onclick="setP1Preset('reset')">리셋</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LED Spot 참고용 탭 -->
+            <section id="led-spot-tab" class="tab-content">
+                <div class="section-grid">
+                    <div class="card highlight-warning">
+                        <div class="card__body">
+                            <h3>📝 참고용: LED Spot 정보</h3>
+                            <p><strong>주의:</strong> 이 정보는 참고용입니다. 현재 실제 사용 중인 조명기는 P1입니다.</p>
+                        </div>
+                    </div>
+
+                    <div class="channels-grid">
+                        <div class="card channel-card">
+                            <div class="card__body">
+                                <h4>채널 1: Pan (좌우)</h4>
+                                <div class="channel-info">
+                                    <p><strong>범위:</strong> 0-255 (540도)</p>
+                                    <p><strong>참고:</strong> X축 할당 가능</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card channel-card">
+                            <div class="card__body">
+                                <h4>채널 2: Tilt (상하)</h4>
+                                <div class="channel-info">
+                                    <p><strong>범위:</strong> 0-255 (270도)</p>
+                                    <p><strong>참고:</strong> Y축 할당 가능</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card channel-card">
+                            <div class="card__body">
+                                <h4>채널 3-5: RGB</h4>
+                                <div class="channel-info">
+                                    <p><strong>채널 3:</strong> Red (0-255)</p>
+                                    <p><strong>채널 4:</strong> Green (0-255)</p>
+                                    <p><strong>채널 5:</strong> Blue (0-255)</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card channel-card">
+                            <div class="card__body">
+                                <h4>채널 6-8: 기타</h4>
+                                <div class="channel-info">
+                                    <p><strong>채널 6:</strong> Master Dimmer</p>
+                                    <p><strong>채널 7:</strong> Pan/Tilt Speed</p>
+                                    <p><strong>채널 8:</strong> Strobe</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 실무 팁 탭 -->
+            <section id="tips-tab" class="tab-content">
+                <div class="section-grid">
+                    <div class="card highlight-warning">
+                        <div class="card__body">
+                            <h3>CROSS 노브 관련 이슈</h3>
+                            <p><strong>문제:</strong> CROSS 노브 조작 시 다른 채널에도 영향</p>
+                            <p><strong>원인:</strong> 크로스페이드 모드의 특성</p>
+                            <p><strong>해결:</strong> P1 조명기는 고정형이므로 큰 영향 없음</p>
+                        </div>
+                    </div>
+
+                    <div class="card highlight-info">
+                        <div class="card__body">
+                            <h3>P1 조명기 전용 노하우</h3>
+                            <div class="tips-list">
+                                <div class="tip-detail">
+                                    <h5>🎨 색상 조합 팁</h5>
+                                    <p>• 따뜻한 색: R:255, G:100, B:0 (주황색)</p>
+                                    <p>• 차가운 색: R:0, G:150, B:255 (시안)</p>
+                                    <p>• 보라색: R:200, G:0, B:255</p>
+                                    <p>• 노란색: R:255, G:255, B:0</p>
+                                </div>
+                                <div class="tip-detail">
+                                    <h5>⚡ 스트로브 활용</h5>
+                                    <p>• 느린 깜빡임: 채널2 = 50-100</p>
+                                    <p>• 보통 속도: 채널2 = 150-200</p>
+                                    <p>• 빠른 깜빡임: 채널2 = 200-255</p>
+                                </div>
+                                <div class="tip-detail">
+                                    <h5>🌈 프리셋 컬러 활용</h5>
+                                    <p>• 채널4 값을 천천히 올리며 색상 확인</p>
+                                    <p>• 원하는 색상 발견 시 DMX 값 기록</p>
+                                    <p>• 체이스에 다양한 프리셋 값 조합</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>체이스 실행 중 수동 제어</h3>
+                            <p>P1 조명기도 체이스 실행 중 수동 제어 가능:</p>
+                            <ol class="step-list">
+                                <li>MANUAL 버튼 누르기</li>
+                                <li>P1 버튼으로 P1 조명기 선택</li>
+                                <li>원하는 채널 슬라이더 조작</li>
+                                <li>RELEASE CHANNELS로 자동 모드 복귀</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 문제 해결 탭 -->
+            <section id="troubleshoot-tab" class="tab-content">
+                <div class="section-grid">
+                    <div class="card highlight-error">
+                        <div class="card__body">
+                            <h3>LCD 표시 한계</h3>
+                            <p><strong>현상:</strong> 채널별 정확한 DMX 값이 LCD에 표시되지 않음</p>
+                            <p><strong>대안:</strong> 이 앱의 가상 컨트롤 패널로 값 확인</p>
+                        </div>
+                    </div>
+
+                    <div class="card highlight-error">
+                        <div class="card__body">
+                            <h3>RUN SCENE 제한사항</h3>
+                            <p><strong>현상:</strong> RUN SCENE에서 +/- 버튼이 작동하지 않음</p>
+                            <p><strong>해결:</strong> P1 조명기는 CHASE 모드 사용 권장</p>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>P1 조명기 설정 문제</h3>
+                            <p><strong>체크리스트:</strong></p>
+                            <ul>
+                                <li>P1 조명기가 DMX 1번 주소로 설정되어 있는지 확인</li>
+                                <li>DMX 케이블이 올바르게 연결되어 있는지 확인</li>
+                                <li>콘솔의 P1 버튼이 P1 조명기와 매핑되어 있는지 확인</li>
+                                <li>각 채널 슬라이더가 올바른 기능에 연결되어 있는지 확인</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="card highlight-info">
+                        <div class="card__body">
+                            <h3>DMX 연결 트러블슈팅</h3>
+                            <div class="troubleshoot-steps">
+                                <div class="step">
+                                    <h5>1단계: 물리적 연결</h5>
+                                    <p>• DMX OUT → P1 조명기 IN</p>
+                                    <p>• 케이블 상태 확인</p>
+                                </div>
+                                <div class="step">
+                                    <h5>2단계: 주소 설정</h5>
+                                    <p>• P1 조명기 = DMX 1-7번</p>
+                                    <p>• 조명기 뒷면 DIP 스위치 확인</p>
+                                </div>
+                                <div class="step">
+                                    <h5>3단계: 신호 테스트</h5>
+                                    <p>• 채널 1 (밝기) 슬라이더로 반응 확인</p>
+                                    <p>• RGB 채널로 색상 변화 확인</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- DMX 계산기 도구 -->
+        <div class="tools-section">
+            <div class="card">
+                <div class="card__body">
+                    <h3>P1 DMX 값 계산기</h3>
+                    <div class="calculator">
+                        <label class="form-label">DMX 값 (0-255):</label>
+                        <input type="number" id="dmxValue" class="form-control" min="0" max="255" placeholder="DMX 값 입력">
+                        <div id="percentResult" class="result"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card__body">
+                    <h3>RGB 색상 계산기</h3>
+                    <div class="calculator">
+                        <div class="rgb-inputs">
+                            <div class="input-group">
+                                <label>Red:</label>
+                                <input type="number" id="rgbRed" min="0" max="255" value="0">
+                            </div>
+                            <div class="input-group">
+                                <label>Green:</label>
+                                <input type="number" id="rgbGreen" min="0" max="255" value="0">
+                            </div>
+                            <div class="input-group">
+                                <label>Blue:</label>
+                                <input type="number" id="rgbBlue" min="0" max="255" value="0">
+                            </div>
+                        </div>
+                        <div id="rgbResult" class="result"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
